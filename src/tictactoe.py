@@ -8,7 +8,7 @@
 DIM_TABULEIRO = (3,3) 
 VALORES_TABULEIRO = (-1,0,1) 
 POSICOES_TABULEIRO = (1,2,3,4,5,6,7,8,9)
-COLUNAS = (1,2,3)«
+COLUNAS = (1,2,3)
 COLUNAS_IND = (0,1,2)
 DIAGONAL = (1,2) 
 POSICOES_INTERNAMENTE = ((1,2,3),(4,5,6),(7,8,9)) 
@@ -24,7 +24,6 @@ VISUAL = ('X','O','EMPATE')
 VENCEDOR_X = [(0,1,1),(1,0,1),(1,1,0)] 
 VENCEDOR_O = [(-1,-1,0),(-1,0,-1),(0,-1,-1)]  
 VENCEDOR = [3,-3] 
-ao
 BIFURCACAO_X = [(1,0,0),(0,1,0),(0,0,1)] 
 BIFURCACAO_O = [(-1,0,0),(0,-1,0),(0,0,-1)]
 TIPO_ASSOCIADO = ['BIFURCACAO','BLOQUEIO_BIFURCACAO']
@@ -500,13 +499,13 @@ def bifurcacao_filas(tab,estado_jogo,inteiro):
     temp = 1 if inteiro == JOGADORES[0] else -1
 
     res = []
-    res_linha = [('linha',el+1)  for el in range(0,3) if sum(estado_jogo[el]) == temp \
+    res_linha = [('linha',el+1)  for el in range(0,3) if sum(estado_jogo[el]) == temp 
     and(estado_jogo[el][0]*estado_jogo[el][1]) == 0]
 
-    res_coluna =  [ ('coluna',el-2)  for el in range(3,6) if sum(estado_jogo[el]) == temp\ 
+    res_coluna =  [ ('coluna',el-2)  for el in range(3,6) if sum(estado_jogo[el]) == temp 
     and(estado_jogo[el][0]*estado_jogo[el][1]) == 0]
 
-    res_diagonal = [ ('diagonal',el-5)  for el in range(6,8) if sum(estado_jogo[el]) == temp\
+    res_diagonal = [ ('diagonal',el-5)  for el in range(6,8) if sum(estado_jogo[el]) == temp
     and(estado_jogo[el][0]*estado_jogo[el][1]) == 0]
 
     res += res_linha + res_coluna + res_diagonal
@@ -627,7 +626,7 @@ def jogo_galo_empate(tab,posicoes_livres):
 
     # jogo_galo_empate:  tabuleiro x inteiro(numero de posicoes livres) -> 
     # cad. carateres   
-    if obter_posicoes_livres(tab) == () and jogador_ganhador(tab) == 0 and \ 
+    if obter_posicoes_livres(tab) == () and jogador_ganhador(tab) == 0 and \
     (posicoes_livres == 1 or posicoes_livres == 0):
         return 'EMPATE'      
 
@@ -936,7 +935,7 @@ def jogo_do_galo(cad_carateres,cad_caraters):
     argumento corresponde a marca ('X' ou 'O') que deseja utilizar o jogador humano,
     e o segundo argumento selecciona a estrategia de jogo utilizada pela maquina.
     """
-    
+
     if not cad_carateres in VISUAL or cad_caraters not in ESTRATEGIA:
         raise ValueError('jogo_do_galo: algum dos argumentos e invalido')
     print('Bem-vindo ao JOGO DO GALO.')
